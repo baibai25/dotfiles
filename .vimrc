@@ -54,6 +54,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Yggdroot/indentLine'
 Plug 'Shougo/neocomplete.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " colorscheme
