@@ -3,6 +3,6 @@
 ## link.sh
 
     $ chmod +x link.sh
-    $ ./dotfilesLink.sh
+    $ ./link.sh
 
 
