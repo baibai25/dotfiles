@@ -2,7 +2,7 @@
 
 ## link.sh
 
-    $ chmod +x dotfilesLink.sh
+    $ chmod +x link.sh
     $ ./dotfilesLink.sh
 
 
