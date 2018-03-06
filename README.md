@@ -1,6 +1,6 @@
-## dotfiles
+# dotfiles
 
-# link.sh
+## link.sh
 
     $ chmod +x dotfilesLink.sh
     $ ./dotfilesLink.sh
