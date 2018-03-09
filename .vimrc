@@ -1,9 +1,20 @@
 "------------------------------------------
 " vim settings
 " -----------------------------------------
+
+" common settings
 set nocompatible
 set encoding=utf-8
 scriptencoding utf-8
+set number  " 行番号を表示
+set cursorline  " カーソルラインをハイライト
+set showmatch   " 対応する括弧を強調
+set matchtime=1 " 対応括弧表示を1秒に
+set matchpairs& matchpairs+=<:> " <>を対応括弧ペアに
+set nostartofline   " 移動コマンドを使った時行頭に移動しない
+set mouse=a "マウスモード有効
+set whichwrap=b,s,<,>,[,]   " 行頭行末の左右移動で行をまたぐ
+set clipboard=unnamedplus   "クリップボードと同期
 
 " tab
 set tabstop=4
@@ -18,18 +29,8 @@ set incsearch   " インクリメンタルサーチ. １文字入力毎に検索
 set ignorecase  " 検索パターンに大文字小文字を区別しない
 set smartcase   " 検索パターンに大文字を含んでいたら大文字小文字を区別する
 set hlsearch    " 検索結果をハイライト
-nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>   " ESCキー2度押しでハイライトの切り替え
-
-set number  " 行番号を表示
-set cursorline  " カーソルラインをハイライト
-set showmatch   " 対応する括弧を強調
-set matchtime=1 " 対応括弧表示を1秒に
-set matchpairs& matchpairs+=<:> " <>を対応括弧ペアに
-set nostartofline   " 移動コマンドを使った時行頭に移動しない
-set mouse=a "マウスモード有効
-set whichwrap=b,s,<,>,[,]   " 行頭行末の左右移動で行をまたぐ
-set clipboard=unnamedplus   "クリップボードと同期
-
+set wrapscan    " 最後尾まで検索を終えたら次の検索で先頭に移る
+nnoremap <ESC><ESC> :nohlsearch<CR>  " ESCキー2度押しでハイライトの切り替え
 
 " statusline
 set statusline=%F   " ファイル名表示
@@ -59,7 +60,10 @@ call plug#end()
 
 " colorscheme
 set background=dark
-colorscheme jellybeans
+autocmd ColorScheme * highlight MatchParen term=reverse cterm=bold ctermfg=231 ctermbg=60 gui=bold guifg=#ffffff guibg=#556779 
+colorscheme hybrid
+
+
 
 "Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
