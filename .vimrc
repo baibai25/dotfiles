@@ -15,6 +15,7 @@ set nostartofline   " 移動コマンドを使った時行頭に移動しない
 set mouse=a "マウスモード有効
 set whichwrap=b,s,<,>,[,]   " 行頭行末の左右移動で行をまたぐ
 set clipboard=unnamedplus   "クリップボードと同期
+set ambiwidth=double    " 全角記号の位置ずれ対策
 
 " tab
 set tabstop=4
