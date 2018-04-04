@@ -61,6 +61,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Yggdroot/indentLine'
 Plug 'Shougo/neocomplete.vim'
+Plug 'luisjure/csound-vim'
 "Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
