@@ -16,6 +16,7 @@ set mouse=a "マウスモード有効
 set whichwrap=b,s,<,>,[,]   " 行頭行末の左右移動で行をまたぐ
 set clipboard=unnamedplus   "クリップボードと同期
 set ambiwidth=double    " 全角記号の位置ずれ対策
+set backspace=indent,eol,start
 
 " tab
 set tabstop=4
