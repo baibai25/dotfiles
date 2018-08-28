@@ -17,7 +17,6 @@ set whichwrap=b,s,<,>,[,]   " 行頭行末の左右移動で行をまたぐ
 set clipboard=unnamedplus   "クリップボードと同期
 set ambiwidth=double    " 全角記号の位置ずれ対策
 set backspace=indent,eol,start
-set t_Co=256
 
 " tab
 set tabstop=4
@@ -65,23 +64,11 @@ Plug 'scrooloose/nerdtree'
 Plug 'Yggdroot/indentLine'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"Plug 'Shougo/neocomplete.vim'
-
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 call plug#end()
 
-" deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#num_processes = 1
-
 " vim-airline
-let g:airline_theme='hybird'
+let g:airline_theme='dark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
