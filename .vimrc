@@ -67,13 +67,17 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 call plug#end()
 
-" vim-airline
-let g:airline_theme='dark'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-
 " colorscheme
 set background=dark
 autocmd ColorScheme * highlight MatchParen term=reverse cterm=bold ctermfg=231 ctermbg=60 gui=bold guifg=#ffffff guibg=#556779 
 colorscheme hybrid
 
+" vim-airline
+let g:airline_theme='dark'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
+" YCM
+let g:ycm_key_list_select_completion = ['<TAB>']
+let g:ycm_key_list_previous_completion = ['<S-TAB>']
+let g:ycm_key_list_stop_completion = ['<ENTER>']
