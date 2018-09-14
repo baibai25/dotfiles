@@ -81,3 +81,4 @@ let g:airline_powerline_fonts = 1
 let g:ycm_key_list_select_completion = ['<TAB>']
 let g:ycm_key_list_previous_completion = ['<S-TAB>']
 let g:ycm_key_list_stop_completion = ['<ENTER>']
+set completeopt-=preview
