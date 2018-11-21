@@ -1,4 +1,0 @@
-jupyterthemes
-https://github.com/dunovank/jupyter-themes
-
-jt -t chesterish -T -N -fs 12
