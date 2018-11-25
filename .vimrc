@@ -58,13 +58,13 @@ endif
 " -----------------------------------------
 call plug#begin('~/.vim/plugged')
 Plug 'w0ng/vim-hybrid'
-Plug 'tomasr/molokai'
 Plug 'nanotech/jellybeans.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Yggdroot/indentLine'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
+Plug 'luisjure/csound-vim'
 call plug#end()
 
 " colorscheme
@@ -82,3 +82,6 @@ let g:ycm_key_list_select_completion = ['<TAB>']
 let g:ycm_key_list_previous_completion = ['<S-TAB>']
 let g:ycm_key_list_stop_completion = ['<ENTER>']
 set completeopt-=preview
+
+" csound-vim
+autocmd Syntax csound setlocal foldmethod=manual
