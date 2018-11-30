@@ -5,4 +5,5 @@
 
 ## Themes
 + [jupyter-themes](https://github.com/dunovank/jupyter-themes)
-+ jt -t chesterish -T -N -fs 14 -vim
++ jt -t chesterish -T -N -fs 14 -vim -cellw 90%
+
