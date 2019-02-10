@@ -63,8 +63,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'Yggdroot/indentLine'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
 Plug 'luisjure/csound-vim'
+Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
 call plug#end()
 
 " colorscheme
@@ -77,11 +77,11 @@ let g:airline_theme='dark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
+" csound-vim
+autocmd Syntax csound setlocal foldmethod=manual
+
 " YCM
 let g:ycm_key_list_select_completion = ['<TAB>']
 let g:ycm_key_list_previous_completion = ['<S-TAB>']
 let g:ycm_key_list_stop_completion = ['<ENTER>']
 set completeopt-=preview
-
-" csound-vim
-autocmd Syntax csound setlocal foldmethod=manual
