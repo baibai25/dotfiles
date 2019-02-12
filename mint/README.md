@@ -74,7 +74,6 @@ powerline:
 + ClipGrab
 + Discord
 + Peek
-+ plank
 + Rhythmbox
 + Rygel
 + SimpleScreenRecorder
@@ -92,6 +91,10 @@ powerline:
 	+ dlib
 + numlockx
 + xbacklight
++ plank
+	+ if you cannot open trash docklets:
+	+ $ exo-preferred-applications
+	+ Ref. [Trash Docklet doesn't open Thunar](https://bugs.launchpad.net/plank/+bug/1610183)
 + xfce4-goodies 
 + Gparted
 + Grub Customizer
