@@ -22,6 +22,17 @@ $ LANG=C xdg-user-dirs-gtk-update
 + [Adapt font and icon sizes to High Definition screen resolutions in Ubuntu-Studio XFCE](https://askubuntu.com/questions/652021/adapt-font-and-icon-sizes-to-high-definition-screen-resolutions-in-ubuntu-studio)
 + [ Bigger menu text and icons?](https://forum.xfce.org/viewtopic.php?id=6576)
 
+
+### Mouse and touch pad
+Reverse scroll
+1. Check synclient number
+2. Open autostart and set command
+```
+synclient
+synclient VertScrollDelta=-91 && synclient HorizScrollDelta=-91
+```
+
+
 ### Hardware acceleration
 + VAAPI
 + vainfo
