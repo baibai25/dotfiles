@@ -40,6 +40,11 @@ synclient VertScrollDelta=-91 && synclient HorizScrollDelta=-91
 
 ### Audio
 Change the number of volume steps:
+```
+xfconf-query -c xfce4-mixer -n -p /volume-step-size -s 1 -t uint
+```
+or
+
 1. check pulseaudio plugin number
 2. set steps
 
@@ -49,7 +54,9 @@ xfconf-query -c xfce4-panel -p /plugins/plugin-"xx"/volume-step --create -t int 
 sudo reboot
 ```
 
-Ref. [Change the number of steps in various volume controls](https://forum.xfce.org/viewtopic.php?id=12082)
+Ref.
+[How to set the number of steps (now it's 5 points for me), when audio volume is modified by Apple keyboard (fn F10, F11, F12)](https://askubuntu.com/questions/518412/how-to-set-the-number-of-steps-now-its-5-points-for-me-when-audio-volume-is)
+[Change the number of steps in various volume controls](https://forum.xfce.org/viewtopic.php?id=12082)
 
 ### Change terminal language (Experimental)
 Add following statement to your .bashrc:
