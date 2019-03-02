@@ -57,20 +57,20 @@ endif
 " vim-plug
 " -----------------------------------------
 call plug#begin('~/.vim/plugged')
-Plug 'w0ng/vim-hybrid'
-Plug 'nanotech/jellybeans.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Yggdroot/indentLine'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'luisjure/csound-vim'
 Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
+Plug 'kristijanhusak/vim-hybrid-material'
 call plug#end()
 
 " colorscheme
+autocmd ColorScheme * highlight MatchParen term=reverse cterm=bold ctermfg=231 ctermbg=60 gui=bold guifg=#ffffff guibg=#556779
+"let g:hybrid_transparent_background = 1
 set background=dark
-autocmd ColorScheme * highlight MatchParen term=reverse cterm=bold ctermfg=231 ctermbg=60 gui=bold guifg=#ffffff guibg=#556779 
-colorscheme hybrid
+colorscheme hybrid_reverse
 
 " vim-airline
 let g:airline_theme='dark'
