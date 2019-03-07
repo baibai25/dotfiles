@@ -1,7 +1,3 @@
-"------------------------------------------
-" vim settings
-" -----------------------------------------
-
 " common settings
 set nocompatible
 set encoding=utf-8
@@ -57,20 +53,28 @@ endif
 " vim-plug
 " -----------------------------------------
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree'
-Plug 'Yggdroot/indentLine'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'luisjure/csound-vim'
-Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
-Plug 'kristijanhusak/vim-hybrid-material'
+    Plug 'scrooloose/nerdtree'
+    Plug 'Yggdroot/indentLine'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'luisjure/csound-vim'
+    Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
+    Plug 'kristijanhusak/vim-hybrid-material'
 call plug#end()
 
 " colorscheme
+if (has("termguicolors"))
+    set termguicolors
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+
+syntax enable
 autocmd ColorScheme * highlight MatchParen term=reverse cterm=bold ctermfg=231 ctermbg=60 gui=bold guifg=#ffffff guibg=#556779
-"let g:hybrid_transparent_background = 1
 set background=dark
+"let g:hybrid_transparent_background = 1
 colorscheme hybrid_reverse
+"colorscheme hybrid_material
 
 " vim-airline
 let g:airline_theme='dark'
