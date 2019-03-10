@@ -48,10 +48,9 @@ if has('vim_starting')
     let &t_SR .= "\e[4 q"   " 置換モード時に非点滅の下線タイプのカーソル
 endif
 
-
-"------------------------------------------
+"----------
 " vim-plug
-" -----------------------------------------
+" ---------
 call plug#begin('~/.vim/plugged')
     Plug 'scrooloose/nerdtree'
     Plug 'Yggdroot/indentLine'
@@ -62,19 +61,39 @@ call plug#begin('~/.vim/plugged')
     Plug 'kristijanhusak/vim-hybrid-material'
 call plug#end()
 
+" ------------
 " colorscheme
+" ------------
 if (has("termguicolors"))
     set termguicolors
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
+let t:is_transparent = 0
+function! Toggle_transparent()
+    if t:is_transparent == 0
+        hi Normal guibg=NONE ctermbg=NONE
+        let t:is_transparent = 1
+    else
+        set background=dark
+        let t:is_transparent = 0
+    endif
+endfunction
+nnoremap <C-t> : call Toggle_transparent()<CR>
+
 syntax enable
 autocmd ColorScheme * highlight MatchParen term=reverse cterm=bold ctermfg=231 ctermbg=60 gui=bold guifg=#ffffff guibg=#556779
 set background=dark
-"let g:hybrid_transparent_background = 1
+let g:enable_bold_font = 1
+"let g:enable_italic_font = 1
 colorscheme hybrid_reverse
 "colorscheme hybrid_material
+
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
+highlight Comment cterm=italic
+
 
 " vim-airline
 let g:airline_theme='dark'
