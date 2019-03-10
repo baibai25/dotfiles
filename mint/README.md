@@ -23,7 +23,7 @@ $ LANG=C xdg-user-dirs-gtk-update
 + [ Bigger menu text and icons?](https://forum.xfce.org/viewtopic.php?id=6576)
 
 
-### Mouse and touch pad
+### Mouse and touchpad
 Reverse scroll
 1. Check synclient number
 2. Open autostart and set command
@@ -37,6 +37,15 @@ synclient VertScrollDelta=-91 && synclient HorizScrollDelta=-91
 + VAAPI
 + vainfo
 + [Chromium GPU](https://launchpad.net/~saiarcot895/+archive/ubuntu/chromium-beta)
+```
+cd /etc
+sudo vim environment
+
+(add these statements)
+export GOOGLE_API_KEY="xxxxxx"
+export GOOGLE_DEFAULT_CLIENT_ID="xxxxxx"
+export GOOGLE_DEFAULT_CLIENT_SECRET="xxxxxx"
+```
 
 ### Audio
 Change the number of volume steps:
