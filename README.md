@@ -17,6 +17,11 @@ tic screen-256color.terminfo
 export TERM=screen-256color
 ```
 
+if not work, add to .bashrc:
+```
+export TERM=screen-256color
+```
+
 3. Add to .vimrc:
 ```
 let &t_ZH="\e[3m"
