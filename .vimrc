@@ -69,6 +69,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'luisjure/csound-vim'
     Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
     Plug 'kristijanhusak/vim-hybrid-material'
+    "Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 call plug#end()
 
 " ------------
@@ -118,3 +119,7 @@ let g:ycm_key_list_select_completion = ['<TAB>']
 let g:ycm_key_list_previous_completion = ['<S-TAB>']
 let g:ycm_key_list_stop_completion = ['<ENTER>']
 set completeopt-=preview
+
+" yapf
+"map <C-Y> :call yapf#YAPF()<cr>
+"imap <C-Y> <c-o>:call yapf#YAPF()<cr>
