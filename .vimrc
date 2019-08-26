@@ -42,16 +42,10 @@ set statusline+=[LOW=%l/%L] " 現在行数/全行数
 set laststatus=2    " ステータスラインを常に表示(0:表示しない、1:2つ以上ウィンドウがある時だけ表示)
 
 " cursor
-"if has('vim_starting')
-    "let &t_SI .= "\e[5 q"   " 挿入モード時に非点滅の縦棒タイプのカーソル
-    "let &t_EI .= "\e[2 q"   " ノーマルモード時に非点滅のブロックタイプのカーソル
-    "let &t_SR .= "\e[4 q"   " 置換モード時に非点滅の下線タイプのカーソル
-"endif
-
 if exists('$TMUX')
-    let &t_SI = "\ePtmux;\e\e[5 q\e\\"
-    let &t_EI = "\ePtmux;\e\e[2 q\e\\"
-    let &t_SR = "\ePtmux;\e\e[4 q\e\\"
+    let &t_SI = "\ePtmux;\e\e[5 q\e\\"	" 挿入モード時に非点滅の縦棒タイプのカーソル
+    let &t_EI = "\ePtmux;\e\e[2 q\e\\"	" ノーマルモード時に非点滅のブロックタイプのカーソル
+    let &t_SR = "\ePtmux;\e\e[4 q\e\\"	" 置換モード時に非点滅の下線タイプのカーソル
 else
     let &t_SI .= "\e[5 q"
     let &t_EI .= "\e[2 q"
@@ -69,7 +63,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'luisjure/csound-vim'
     Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
     Plug 'kristijanhusak/vim-hybrid-material'
-    "Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 call plug#end()
 
 " ------------
@@ -81,6 +74,7 @@ if (has("termguicolors"))
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
+" toggle background transparent 
 let t:is_transparent = 0
 function! Toggle_transparent()
     if t:is_transparent == 0
@@ -97,15 +91,18 @@ syntax enable
 autocmd ColorScheme * highlight MatchParen term=reverse cterm=bold ctermfg=231 ctermbg=60 gui=bold guifg=#ffffff guibg=#556779
 set background=dark
 let g:enable_bold_font = 1
-"let g:enable_italic_font = 1
 colorscheme hybrid_reverse
 "colorscheme hybrid_material
 
-let &t_ZH="\e[3m"
-let &t_ZR="\e[23m"
-highlight Comment cterm=italic
+" Italic font
+"let &t_ZH="\e[3m"
+"let &t_ZR="\e[23m"
+"highlight Comment cterm=italic
 
 
+"----------
+" Plug
+" ---------
 " vim-airline
 let g:airline_theme='dark'
 let g:airline#extensions#tabline#enabled = 1
@@ -119,7 +116,3 @@ let g:ycm_key_list_select_completion = ['<TAB>']
 let g:ycm_key_list_previous_completion = ['<S-TAB>']
 let g:ycm_key_list_stop_completion = ['<ENTER>']
 set completeopt-=preview
-
-" yapf
-"map <C-Y> :call yapf#YAPF()<cr>
-"imap <C-Y> <c-o>:call yapf#YAPF()<cr>
