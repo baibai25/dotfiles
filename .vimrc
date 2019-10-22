@@ -61,7 +61,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'luisjure/csound-vim'
-    Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
+    Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
     Plug 'kristijanhusak/vim-hybrid-material'
 call plug#end()
 
@@ -99,10 +99,9 @@ colorscheme hybrid_reverse
 "let &t_ZR="\e[23m"
 "highlight Comment cterm=italic
 
-
-"----------
-" Plug
-" ---------
+"-----------------
+" Plugin settings
+" ----------------
 " vim-airline
 let g:airline_theme='dark'
 let g:airline#extensions#tabline#enabled = 1
@@ -111,8 +110,7 @@ let g:airline_powerline_fonts = 1
 " csound-vim
 autocmd Syntax csound setlocal foldmethod=manual
 
-" YCM
-let g:ycm_key_list_select_completion = ['<TAB>']
-let g:ycm_key_list_previous_completion = ['<S-TAB>']
-let g:ycm_key_list_stop_completion = ['<ENTER>']
-set completeopt-=preview
+" coc
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
