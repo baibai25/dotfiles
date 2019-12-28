@@ -104,7 +104,7 @@ cd fonts
 ```
 git clone https://github.com/mzyy94/RictyDiminished-for-Powerline.git
 cd RictyDiminished-for-Powerline/powerline-fontpatched/
-sudo mkdir /usr/share/fonts
+sudo mkdir /usr/share/fonts/powerline
 sudo mv *.ttf /usr/share/fonts/powerline/
 fc-cache
 ```
