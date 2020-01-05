@@ -11,7 +11,7 @@ status.register(
 
 status.register(
     "clock",
-    format=" %a %d-%m-%Y ",
+    format=" %a %Y-%m-%d",
     color='#61AEEE',
     interval=1,
     on_leftclick="/usr/bin/gsimplecal"
