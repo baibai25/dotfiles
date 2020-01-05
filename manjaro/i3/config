@@ -339,8 +339,11 @@ bar {
 	bindsym button5 nop
 #   font xft:URWGothic-Book 11
 	strip_workspace_numbers yes
+    
+    #i3bar_command i3bar -t # transparent
 
     colors {
+        #background #00000000
         background #222D31
         statusline #F9FAF9
         separator  #454947
