@@ -18,8 +18,8 @@ status.register(
 )
 
 status.register(
-        "mem",
-        format = " {avail_mem} MiB",
+    "mem",
+    format = " {percent_used_mem}%",
 )
 
 status.register(
