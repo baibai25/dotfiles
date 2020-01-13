@@ -19,7 +19,10 @@ status.register(
 
 status.register(
     "mem",
-    format = " {percent_used_mem}%",
+    #format = " {percent_used_mem}%",
+    format = " {used_mem} / {total_mem} GB",
+    divisor = 1024**3,
+    interval = 1
 )
 
 status.register(
