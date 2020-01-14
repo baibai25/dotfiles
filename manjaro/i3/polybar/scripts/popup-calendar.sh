@@ -5,7 +5,7 @@ BORDER_SIZE=1  # border size from your wm settings
 YAD_WIDTH=222  # 222 is minimum possible value
 YAD_HEIGHT=193 # 193 is minimum possible value
 #DATE="$(date +" %H:%M:%S  %a %Y-%m-%d")"
-DATE="$(date +" %a %Y/%m/%d %H:%M:%S")"
+DATE="$(date +"%a %Y/%m/%d %H:%M:%S")"
 
 case "$1" in
 --popup)
