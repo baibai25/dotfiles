@@ -15,20 +15,19 @@ primary=`xrandr --query | grep " primary" | cut -d " " -f4`
 nonprimary=`xrandr --query | grep -v " primary" | grep " connected" | cut -d " " -f3`
 
 if [ "$nonprimary" = "" ]; then
-    echo "One display"
-    MONITOR_primary=$port_nonprimary polybar --reload example0 &
+    echo "Single display"
+    MONITOR_primary=$port_nonprimary polybar --reload single &
  
 elif [ $primary = $nonprimary ]; then
     echo "Mirror"
-    MONITOR_primary=$port_nonprimary polybar --reload example0 &
+    MONITOR_primary=$port_nonprimary polybar --reload mirror &
     
 elif [ $primary != $nonprimary ]; then
     echo "Multiple"
-    
-    MONITOR_primary=$port_primary polybar --reload example0 &
+    MONITOR_primary=$port_primary polybar --reload single &
     
     for m in $port_nonprimary; do
-        MONITOR_sub=$m polybar --reload example1 &
+        MONITOR_sub=$m polybar --reload extend &
     done
 fi
 
