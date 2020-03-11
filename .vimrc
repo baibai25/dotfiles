@@ -52,6 +52,10 @@ else
     let &t_SR .= "\e[4 q"
 endif
 
+" mapping
+nnoremap ; :
+nnoremap : ;
+
 "----------
 " vim-plug
 " ---------
@@ -63,6 +67,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'luisjure/csound-vim'
     Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
     Plug 'kristijanhusak/vim-hybrid-material'
+    Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 " ------------
