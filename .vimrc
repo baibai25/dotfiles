@@ -57,7 +57,8 @@ nnoremap ; :
 nnoremap : ;
 nnoremap <S-j> 3j
 nnoremap <S-k> 3k
-
+vnoremap <S-j> 3j
+vnoremap <S-k> 3k
 
 "----------
 " vim-plug
