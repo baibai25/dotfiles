@@ -55,6 +55,9 @@ endif
 " mapping
 nnoremap ; :
 nnoremap : ;
+nnoremap <S-j> 3j
+nnoremap <S-k> 3k
+
 
 "----------
 " vim-plug
@@ -67,7 +70,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'luisjure/csound-vim'
     Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
     Plug 'kristijanhusak/vim-hybrid-material'
-    Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 " ------------
