@@ -11,6 +11,7 @@ set nostartofline   " 移動コマンドを使った時行頭に移動しない
 set mouse=a "マウスモード有効
 set whichwrap=b,s,<,>,[,]   " 行頭行末の左右移動で行をまたぐ
 set clipboard=unnamedplus   "クリップボードと同期
+set clipboard+=unnamed
 set ambiwidth=double    " 全角記号の位置ずれ対策
 set backspace=indent,eol,start
 
@@ -68,9 +69,12 @@ call plug#begin('~/.vim/plugged')
     Plug 'Yggdroot/indentLine'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'luisjure/csound-vim'
+    " Plug 'luisjure/csound-vim'
+    Plug 'kunstmusik/csound-repl'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'kristijanhusak/vim-hybrid-material'
+    Plug 'macguirerintoul/night_owl_light.vim'
+    Plug 'github/copilot.vim'
 call plug#end()
 
 " ------------
@@ -82,7 +86,7 @@ if (has("termguicolors"))
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
-" toggle background transparent 
+" toggle background transparent
 let t:is_transparent = 0
 function! Toggle_transparent()
     if t:is_transparent == 0
@@ -99,8 +103,9 @@ syntax enable
 autocmd ColorScheme * highlight MatchParen term=reverse cterm=bold ctermfg=231 ctermbg=60 gui=bold guifg=#ffffff guibg=#556779
 set background=dark
 let g:enable_bold_font = 1
-colorscheme hybrid_reverse
+"colorscheme hybrid_reverse
 "colorscheme hybrid_material
+colorscheme night_owl_light
 
 " Italic font
 "let &t_ZH="\e[3m"
@@ -111,7 +116,7 @@ colorscheme hybrid_reverse
 " Plugin settings
 " ----------------
 " vim-airline
-let g:airline_theme='dark'
+let g:airline_theme='light'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
@@ -131,3 +136,5 @@ function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+:let end = search("^[ \t]*endin")
